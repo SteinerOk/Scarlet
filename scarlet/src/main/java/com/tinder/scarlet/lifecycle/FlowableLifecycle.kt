@@ -15,7 +15,8 @@ internal class FlowableLifecycle(
 ) : Lifecycle, Publisher<LifecycleState> by flowable {
 
     companion object {
-        const val CONNECTIVITY_ON_LIFECYCLE_CLASS_NAME = "com.tinder.scarlet.lifecycle.android.ConnectivityOnLifecycle"
+        const val CONNECTIVITY_ON_LIFECYCLE_CLASS_NAME =
+            "com.tinder.scarlet.lifecycle.android.ConnectivityOnLifecycle"
         const val UNREGISTER_CONNECTIVITY_BROADCAST_RECEIVER_METHOD_NAME = "unregisterReceiver"
     }
 
@@ -38,10 +39,13 @@ internal class FlowableLifecycle(
         if (state == LifecycleState.Completed) {
             val connectivityClazz: Class<*>? = Class.forName(CONNECTIVITY_ON_LIFECYCLE_CLASS_NAME)
             connectivityClazz?.let {
-                val connectivityOnLifecycle: Lifecycle? = this.find { connectivityClazz.isInstance(it) }
+                val connectivityOnLifecycle: Lifecycle? =
+                    this.find { connectivityClazz.isInstance(it) }
                 connectivityOnLifecycle?.let {
                     val obj: Any? = connectivityClazz.cast(connectivityOnLifecycle)
-                    val method: Method? = connectivityClazz.getMethod(UNREGISTER_CONNECTIVITY_BROADCAST_RECEIVER_METHOD_NAME)
+                    val method: Method? = connectivityClazz.getMethod(
+                        UNREGISTER_CONNECTIVITY_BROADCAST_RECEIVER_METHOD_NAME
+                    )
                     if (obj != null && method != null) {
                         method.invoke(obj)
                     }
