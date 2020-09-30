@@ -26,6 +26,7 @@ class StompIntegrationTest {
             brokerService.addConnector(BROKER_URL)
         }
     }
+
     @get:Rule
     val connection1 = GozirraStompConnection.create<StompQueueTestService>(
         { observeProtocolEvent() },
@@ -37,6 +38,7 @@ class StompIntegrationTest {
             CLIENT_DESTINATION
         )
     )
+
     @get:Rule
     val connection2 = GozirraStompConnection.create<StompQueueTestService>(
         { observeProtocolEvent() },
