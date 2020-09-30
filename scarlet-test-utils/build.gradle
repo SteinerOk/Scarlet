@@ -7,7 +7,7 @@ dependencies {
     api project(':scarlet-protocol-websocket-mockserver')
     api project(':scarlet-protocol-sse-okhttp')
     api project(':scarlet-protocol-socketio-mockserver')
-    api project(':scarlet-protocol-stomp')
+    api project(':scarlet-protocol-stomp-okhttp')
     api project(':scarlet-protocol-stomp-gozirra')
     api project(':scarlet-protocol-mqtt')
     api rootProject.ext.assertJ
