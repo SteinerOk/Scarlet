@@ -57,7 +57,7 @@ class PahoMqttClientIntegrationTest {
         connection1.clientClosure()
 
         LOGGER.info("${queueTextObserver.values}")
-        queueTextObserver.awaitCount(2)
+        queueTextObserver.awaitCountAndCheck(2)
     }
 
     companion object {
