@@ -56,7 +56,7 @@ class OkHttpStompDestination(
             channel: Channel,
             message: Message
         ) = createMessageMetaDataCallable?.invoke(channel, message)
-                ?: Protocol.MessageMetaData.Empty
+            ?: Protocol.MessageMetaData.Empty
     }
 
     data class MessageMetaData(

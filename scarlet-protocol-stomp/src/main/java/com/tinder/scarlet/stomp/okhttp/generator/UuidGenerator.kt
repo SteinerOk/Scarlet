@@ -1,7 +1,7 @@
 package com.tinder.scarlet.stomp.okhttp.generator
 
 import com.tinder.scarlet.stomp.okhttp.core.IdGenerator
-import java.util.UUID
+import java.util.*
 
 class UuidGenerator : IdGenerator {
 
