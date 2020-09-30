@@ -57,7 +57,7 @@ class GozirraStompClient(
 }
 
 class GozirraStompDestination(
-    val destination: String,
+    private val destination: String,
     private val openRequestFactory: RequestFactory
 ) : Protocol {
 
