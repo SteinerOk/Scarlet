@@ -41,7 +41,7 @@ dependencies {
     implementation project(':scarlet-protocol-mqtt')
     implementation project(':scarlet-protocol-socketio-client')
     implementation project(':scarlet-protocol-sse-okhttp')
-    implementation project(':scarlet-protocol-stomp')
+    implementation project(':scarlet-protocol-stomp-gozirra')
     implementation project(':scarlet-protocol-websocket-okhttp')
     implementation project(':scarlet-lifecycle-android')
     implementation project(':scarlet-message-adapter-moshi')

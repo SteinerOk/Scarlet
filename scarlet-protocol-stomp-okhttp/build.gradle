@@ -1,0 +1,33 @@
+/*
+ * © 2018 Match Group, LLC.
+ */
+
+apply plugin: 'com.vanniktech.maven.publish'
+apply plugin: 'kotlin'
+apply plugin: 'java-library'
+
+dependencies {
+    api project(':scarlet-core')
+    implementation files('libs/gozirra-client-0.4.1.jar')
+
+    implementation project(':scarlet-core-internal')
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.okio
+    implementation rootProject.ext.kotlinStdlib
+
+    api rootProject.ext.okHttp
+
+    testImplementation project(':scarlet-test-utils')
+    testImplementation rootProject.ext.junit
+    testImplementation rootProject.ext.mockito
+    testImplementation rootProject.ext.kotlinReflect
+    testImplementation rootProject.ext.assertJ
+
+    testImplementation rootProject.ext.activeMqJUnit
+    testImplementation rootProject.ext.activeMqBroker
+    testImplementation rootProject.ext.activeMqStomp
+    testImplementation rootProject.ext.activeHttp
+    testImplementation rootProject.ext.slf4jSimple
+
+    testImplementation "javax.servlet:javax.servlet-api:4.0.1"
+}
